@@ -2,13 +2,13 @@
 
 [Русский README](README-RU.md)
 
-<h2>Содержание</h2>
-- [Структура проекта](#project_structure)
-- [Запуск с Docker](#docker_start)
-- [Работа с API](#work_with_API)
-    - [Наполнение базовыми данными](#fill_data)
-    - [Создание администратора](#create_admin)
-- [Postman коллекция запросов](#postman_collection)
+<h2>Content</h2>
+- [Project structure](#project_structure)
+- [Start with Docker](#docker_start)
+- [Working with the API](#work_with_API)
+    - [Filling basic data into the database](#fill_data)
+    - [Create administrator](#create_admin)
+- [Postman collection](#postman_collection)
 
 
 <h2 id="project_structure">Project structure</h2>
