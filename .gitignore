@@ -1,7 +1,8 @@
-*
-!collection
-!deploy
-!project
 !.gitignore
-!*/
-.idea
+!README.md
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
