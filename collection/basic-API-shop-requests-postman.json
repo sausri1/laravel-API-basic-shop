@@ -23,7 +23,8 @@
 								"cart",
 								"2"
 							]
-						}
+						},
+						"description": "This POST request is used to add a product to the shopping cart with ID 2.\n\nThe request URL uses the variable '{{host}}' to dynamically set the host.\n\nNo request body or parameters are currently required. The request uses environment variables 'TOKEN' for authentication and 'host' for the base URL. It is part of the 'basic API shop requests' collection, within the 'cart_add_product' folder in the environment."
 					},
 					"response": []
 				},
@@ -41,7 +42,8 @@
 								"cart",
 								"6"
 							]
-						}
+						},
+						"description": "This DELETE request is used to delete an item from the shopping cart.\n\nAt the end, you need to enter a number - this is the product id in the basket (not the product itself).\n\nThe request uses the {{host}} variable to dynamically change the host. The request does not require a body or parameters. The request uses the \"TOKEN\" variable for authentication, which is stored in the environment."
 					},
 					"response": []
 				},
@@ -58,7 +60,8 @@
 							"path": [
 								"cart"
 							]
-						}
+						},
+						"description": "This GET request is used to get all the items in the cart.\n\nThe request uses the {{host}} variable to dynamically change the host. The request does not require a body or parameters. The request uses the \"TOKEN\" variable for authentication, which is stored in the environment"
 					},
 					"response": []
 				}
@@ -80,7 +83,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"cool3\",\n  \"price\": 9999,\n  \"description\": \"Мощный booox для работы и развлечений\"\n}",
+							"raw": "{\n  \"name\": \"product\",\n  \"price\": 9999,\n  \"description\": \"product description\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,7 +98,8 @@
 							"path": [
 								"products"
 							]
-						}
+						},
+						"description": "This POST request to {{host}}/products is used to add a new product to the shop's inventory.\n\nRequest Body Schema:\n\n- name: string (e.g. 'product') - the name of the product to be added.\n    \n- price: integer (e.g. 9999) - the price of the product in the smallest currency unit.\n    \n- description: string (e.g. 'Хороший товар') - detailed description of the product.\n    \n\nHeaders:\n\n- Content-Type: application/json (indicates the request body format)\n    \n\nVariables:\n\n- host: The base URL of the API server.\n    \n- TOKEN: Authentication token for authorized access to the API.\n    \n\nUse this request to create new product entries in the system by providing the required product details in JSON format.\n\nThis action can only be performed by the administrator."
 					},
 					"response": []
 				},
@@ -113,7 +117,8 @@
 								"products",
 								"1"
 							]
-						}
+						},
+						"description": "This DELETE request is used to delete an item from the store.\n\nAt the end, you need to enter a number - this is the product ID.\n\nThe request uses the {{host}} variable to dynamically change the host. The request does not require a body or parameters. The request uses the \"TOKEN\" variable for authentication, which is stored in the environment.\n\nThis action can only be performed by the administrator."
 					},
 					"response": []
 				},
@@ -130,7 +135,8 @@
 							"path": [
 								"products"
 							]
-						}
+						},
+						"description": "This GET request is used to see all the store's products. The request uses the {{host}} variable to dynamically change the host. The request does not require a body or parameters. Any user can do this without authentication."
 					},
 					"response": []
 				},
@@ -148,7 +154,8 @@
 								"products",
 								"1"
 							]
-						}
+						},
+						"description": "This GET request is used to see a specific product from the store. At the end, you need to enter a number - this is the product ID. The request uses the {{host}} variable to dynamically change the host. The request does not require a body or parameters. Any user can do this without authentication."
 					},
 					"response": []
 				},
@@ -181,7 +188,8 @@
 								"products",
 								"2"
 							]
-						}
+						},
+						"description": "This PATCH request is used to update an item from the store.\n\nAt the end, you need to enter a number - this is the product ID.\n\nThe request uses the {{host}} variable to dynamically change the host. The request requires a body and a header \"Content-Type: application/json\". The request uses the \"TOKEN\" variable for authentication, which is stored in the environment.\n\nThis action can only be performed by the administrator."
 					},
 					"response": []
 				}
@@ -203,7 +211,8 @@
 							"path": [
 								"order"
 							]
-						}
+						},
+						"description": "This POST request is used to place an order.\n\nThe request uses the {{host}} variable to dynamically change the host. The request does not require a body or parameters. Authentication is required.\n\nAfter this request, the shopping **cart will be emptied**."
 					},
 					"response": []
 				},
@@ -220,7 +229,8 @@
 							"path": [
 								"order"
 							]
-						}
+						},
+						"description": "GET a request to get all the items from the shopping cart. It does not require a body or headers. User authentication is required"
 					},
 					"response": []
 				}
@@ -282,7 +292,8 @@
 							"path": [
 								"login"
 							]
-						}
+						},
+						"description": "Login.\n\n\"email\" - email of user.\n\n\"password\" - password of user\n\nNeed to set header \"Content-Type\" to \"application/json\"\n\nA post-response script is used that will automatically add the received token to the environment in the TOKEN variable, which you can use in the future. This overwrites the token. The user's old tokens are still active for 60 minutes, they are not deleted."
 					},
 					"response": []
 				},
@@ -299,7 +310,8 @@
 							"path": [
 								"logout"
 							]
-						}
+						},
+						"description": "Logout. After that, the user's token will be inactive."
 					},
 					"response": []
 				},
@@ -316,7 +328,8 @@
 							"path": [
 								"profile"
 							]
-						}
+						},
+						"description": "Get the user's profile in json format. Requires authentication, does not require headers."
 					},
 					"response": []
 				},
@@ -383,7 +396,8 @@
 							"path": [
 								"signup"
 							]
-						}
+						},
+						"description": "Sign up.\n\n\"fio\": name of user\n\n\"email\": email\n\n\"password\": your password\n\nA post-response script is used that will automatically add the received token to the environment in the TOKEN variable, which you can use in the future. This overwrites the token. The user's old tokens are still active for 60 minutes, they are not deleted."
 					},
 					"response": []
 				},
@@ -415,7 +429,8 @@
 							"path": [
 								"profile"
 							]
-						}
+						},
+						"description": "A PATCH request to update the profile. Requires the header \"Content-Type: application/json\"\n\nYou can change:  \n\"fio\", \"email\", \"password\""
 					},
 					"response": []
 				}
