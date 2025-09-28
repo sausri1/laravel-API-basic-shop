@@ -1,5 +1,6 @@
+*
 !collection
 !deploy
 !project
 !.gitignore
-templates
+!*/
