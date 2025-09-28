@@ -1,9 +1,6 @@
 !.gitignore
 !README.md
-/.fleet
 /.idea
-/.nova
-/.phpunit.cache
 /.vscode
-/.zed
 .idea
+.vscode
