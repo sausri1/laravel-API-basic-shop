@@ -1,6 +1,6 @@
 <h1>Laravel API Basic Shop</h1>
 
-[Русский README](README-RU.md)
+[Русский README](README.ru.md)
 
 <h2>Content</h2>
 
