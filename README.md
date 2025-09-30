@@ -32,6 +32,8 @@ Containers:
 
 <h2 id="docker_start">Start with Docker</h2>
 
+Install Docker on your system and check that it works for you.
+
 - copy from deploy to project;
 - in the terminal, in the project folder, write:
     - `docker-compose up -d` (create container);
@@ -40,7 +42,7 @@ Containers:
     - `Docker exec laravel-container php artisan key:generate`;
     - `Docker exec laravel-container php artisan migrate`;
 
-  After executing these commands, you can go to `http://localhost to make sure everything worked. You will see the Laravel start page.
+  After executing these commands, you can go to `http://localhost` to make sure everything worked. You will see the Laravel start page.
 
 By default, PostgreSQL in the container is used as the database.
 
