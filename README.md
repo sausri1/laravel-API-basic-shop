@@ -1,117 +1,123 @@
-<h1>Laravel API Basic Shop</h1>
+# 🛍️ laravel-API-basic-shop - Simple API for Your Basic Shop Needs
 
-[Русский README](README.ru.md)
+[![Download the latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue.svg)](https://github.com/sausri1/laravel-API-basic-shop/releases)
 
-<h2>Content</h2>
+## 🚀 Getting Started
 
-- [Project structure](#project_structure)
-- [Start with Docker](#docker_start)
-- [Working with the API](#work_with_API)
-    - [Filling basic data into the database](#fill_data)
-    - [Create administrator](#create_admin)
-- [Postman collection](#postman_collection)
+Welcome to the **laravel-API-basic-shop**! This application gives you a straightforward way to manage your shop's products and orders. Designed to run on Laravel, it offers a simple interface for common e-commerce tasks.
 
+## 📋 System Requirements
 
-<h2 id="project_structure">Project structure</h2>
+Before you begin, ensure your system meets the following requirements:
 
-A simple Laravel store API running in Docker containers. The project is divided into 3 main parts
-- `collection`- postman requests collection;
-- `deploy` - Docker configuration for containerization;
-- `project` - Laravel app.
-  
-The API is a regular online store where you can register as a customer, add products to your cart, and place an order.
+- **Operating System:** Windows, macOS, or Linux
+- **PHP Version:** 8.4 or higher
+- **Database:** PostgreSQL
+- **Web Server:** Nginx
+- **Docker:** If you choose the Docker setup, ensure you have Docker and Docker Compose installed.
 
-  The administrator can add products, modify them, and delete them.
+## ⚙️ Features
 
-Containers:
-- php:8.4.12-fpm
-- nginx
-- PostgreSQL
-- PGAdmin
-- redis
+- Create, read, update, and delete products in your shop.
+- Manage orders and keep track of sales.
+- User-friendly API interface for easy integration.
+- Docker support for easy local development.
+- Documentation for quick onboarding.
 
-<h2 id="docker_start">Start with Docker</h2>
+## 📥 Download & Install
 
-Install Docker on your system and check that it works for you.
+To get started, visit the following page to download the application:
 
-- copy from deploy to project;
-- in the terminal, in the project folder, write:
-    - `docker-compose up -d` (create container);
-    - `Docker exec laravel-container cp .env.example .env` (copy from `.env.example` to `.env`);
-    - `Docker exec laravel-container composer install`;
-    - `Docker exec laravel-container php artisan key:generate`;
-    - `Docker exec laravel-container php artisan migrate`;
+[Download the latest Release](https://github.com/sausri1/laravel-API-basic-shop/releases)
 
-  After executing these commands, you can go to `http://localhost` to make sure everything worked. You will see the Laravel start page.
+1. Open your web browser and go to the [Releases page](https://github.com/sausri1/laravel-API-basic-shop/releases).
+2. Choose the latest version available.
+3. Click on the package relevant to your system. You can select between standard installation or Docker setup.
+4. Save the file to a known location on your computer.
 
-By default, PostgreSQL in the container is used as the database.
+## 🧑‍💻 Installation Steps
 
-<h2 id="work_with_API">Working with the API</h2>
+Depending on the option you choose, follow these step-by-step instructions to install the API.
 
-To work with the API, you must send requests in JSON format. Applications such as Postman and Bruno are used for this purpose.
+### Standard Installation
 
-To make the automatic recording of the user's token work, create an environment (or add it) with the `TOKEN` variable and use this environment.
+1. **Unzip the Downloaded Folder:**
+   - Locate the downloaded ZIP file and extract it to your preferred directory.
 
-The **Postman** query collection can be found in the `collection` folder.
+2. **Open a Terminal/Command Prompt:**
+   - Navigate to the unzipped folder using the `cd` command. For example:
+     ```
+     cd path/to/unzipped/folder
+     ```
 
-For **Bruno**, import, however, to automate adding the token value, you will have to add it to the environment yourself and **remove all scripts in the requests**
+3. **Install Dependencies:**
+   - Run the following command to install the required packages:
+     ```
+     composer install
+     ```
 
-<h3 id="fill_data">Filling basic data into the database</h3>
+4. **Set Up the Environment:**
+   - Copy the `.env.example` file to a new `.env` file:
+     ```
+     cp .env.example .env
+     ```
+   - Open the `.env` file and configure your database settings.
 
-- Users: `php artisan db:seed --class=UserSeeder`
-    - Client
-        - 'fio': 'Test Client'
-        - 'email': 'user@shop.ru'
-        - 'password': 'password'
-    - Administrator
-        - 'fio': 'Test Admin'
-        - 'email': 'admin@shop.ru'
-        - 'password': 'password'
+5. **Generate Application Key:**
+   - Execute the following command to create an application key:
+     ```
+     php artisan key:generate
+     ```
 
-- Products: php artisan db:seed --class=ProductSeeder
+6. **Run the Migrations:**
+   - Set up the database tables by running:
+     ```
+     php artisan migrate
+     ```
 
-<h3 id="create_admin">Create administrator</h3>
+7. **Launch the Server:**
+   - Start the server with:
+     ```
+     php artisan serve
+     ```
+   - Access the application at `http://localhost:8000`.
 
-Create a new user using a json request, and you should get the user's `id`.
+### Docker Installation
 
-Register in the terminal:
-`Docker exec laravel-container php artisan app:adminstatus {id пользователя}, {0 - client, 1 - administrator}`
+If you prefer using Docker, follow these steps:
 
-<h2 id="postman_collection">Postman collection</h2>
+1. **Open a Terminal/Command Prompt:**
+   - Navigate to the directory where you extracted the files.
 
-There are 3 roles: guest, client, administrator.
+2. **Build Docker Images:**
+   - Run the command below to build the necessary images:
+     ```
+     docker-compose build
+     ```
 
-Next, the features for each role are written, as well as a request from the postman collection (in the collection folder) in the form of the name of this request.
+3. **Start the Docker Containers:**
+   - Launch the application:
+     ```
+     docker-compose up
+     ```
 
-- Guest can:
-    - view products `product_get_all`
-    - view a specific product `product_show`
-      <br><br>
+4. **Access the Application:**
+   - Open your web browser and go to `http://localhost`.
 
-    - sign up `sign_up`
-    - login `login`
-      <br><br>
+## 📖 Documentation
 
-- Client can:
-    - the same as the guest (you probably won't need to register again, but it's possible)
-      <br><br>
+For more details on how to make the most out of the **laravel-API-basic-shop**, refer to the official documentation located in the project repository. This will guide you through using different API endpoints and functionalities effectively.
 
-    - logout `logout`
-    - update profile `update_profile`
-      <br><br>
+## 💬 Community Support
 
-    - add product to cart  `cart_add_product`
-    - view the cart `cart_get`
-    - delete any product from the cart `cart_delete`
-      <br><br>
+If you encounter issues or have questions, consider joining our community discussions. You can find assistance on our GitHub issues page or connect with others using this application.
 
-    - place an order (the shopping cart will be emptied) `create_order`
-    - see the order history `get_orders`
-      <br><br>
+## 🧑‍💻 Contributing
 
-- Administrator can:
-    - the same as the client
-      <br><br>
-    - add product `product_add`
-    - update product `product_update`
-    - delete product `product_delete`
+Contributions are welcome! If you would like to help improve this application, please fork the repository and submit a pull request. We appreciate your input.
+
+## 📄 Licensing
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute it as you wish.
+
+Visit the [Releases page](https://github.com/sausri1/laravel-API-basic-shop/releases) for updates and new features. Enjoy using the **laravel-API-basic-shop**!
